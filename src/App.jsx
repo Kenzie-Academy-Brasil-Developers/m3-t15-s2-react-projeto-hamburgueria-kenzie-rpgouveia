@@ -30,7 +30,10 @@ function App() {
   return (
     <main>
       <Header />
-      <ProductsList products={products}/>
+      <section>
+        <ProductsList products={products}/>
+        <></>
+      </section>
     </main>
   )
 }
