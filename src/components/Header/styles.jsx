@@ -15,7 +15,7 @@ export const StyledHeader = styled.header`
     gap: 14px;
 
     @media(min-width: 767px){
-        width: 85.6%;
+        width: 86.3%;
         height: 80px;
         padding: 10px 0px;
         flex-direction: row;
