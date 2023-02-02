@@ -1,5 +1,6 @@
 import { api } from "./services/api.js"
 import { useState, useEffect } from "react"
+import { Header } from "./components/Header"
 
 function App() {
   // States
@@ -25,7 +26,7 @@ function App() {
 
   return (
     <main>
-      
+      <Header />
     </main>
   )
 }

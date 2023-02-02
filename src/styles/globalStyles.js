@@ -66,6 +66,9 @@ export const GlobalStyles = createGlobalStyle`
         --color-warning: #FFCD07;
         --color-negative: #E60000;
 
+        /* Extra Colors */
+        --color-white: #FFFFFF;
+
         /* Typography */
         --font-family-1: 'Inter', sans-serif;
 
