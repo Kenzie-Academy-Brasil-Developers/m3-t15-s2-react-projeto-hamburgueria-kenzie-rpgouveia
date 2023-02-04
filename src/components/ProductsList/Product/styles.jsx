@@ -62,6 +62,8 @@ export const StyledLi = styled.li`
         font-size: var(--font-size-5);
         line-height: 17px;
         color: var(--color-white);
+
+        cursor: pointer;
     }
 
     button:hover{
