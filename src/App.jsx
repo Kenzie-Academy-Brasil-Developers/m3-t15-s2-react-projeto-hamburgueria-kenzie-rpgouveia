@@ -6,10 +6,12 @@ import { Cart } from "./components/Cart"
 import { StyledMain } from "./styles/styles.jsx"
 
 function App() {
+  // Local Storage
+  const localCurrentSale = localStorage.getItem('@HamburgueriaKenzie')
   // States
   const [products, setProducts] = useState([])
   const [filteredProducts, setFilteredProducts] = useState([]);
-  const [currentSale, setCurrentSale] = useState([])
+  const [currentSale, setCurrentSale] = useState(localCurrentSale ? JSON.parse(localCurrentSale) : [])
   const [cartTotal, setCartTotal] = useState(0)
 
   // Effects
@@ -28,6 +30,8 @@ function App() {
 
   // on Update
   useEffect(() => {
+    localStorage.setItem('@HamburgueriaKenzie', JSON.stringify(currentSale))
+
     const totalValue = currentSale.reduce((previousValue, currentValue) => {
       return previousValue + currentValue.price
     }, 0)
@@ -36,23 +40,22 @@ function App() {
 
   // Callbacks
   function handleClick(productId) {
-    const productFounded = products.find(item => {
+    const addProductFounded = products.find(item => {
         return item.id == productId
     })
-    // Add product to cart
-    setCurrentSale([...currentSale, productFounded])
+    setCurrentSale([...currentSale, addProductFounded])
   }
 
   function removeProductFromCart(productId) {
-    const newProductList = currentSale.filter(item => {
+    const newCurrentSale = currentSale.filter(item => {
       return item.id !== productId
     })
-    setCurrentSale(newProductList)
+    setCurrentSale(newCurrentSale)
   }
 
   function removeAllProductsFromCart() {
-    const resetProductList = []
-    setCurrentSale(resetProductList)
+    const resetCurrentSale = []
+    setCurrentSale(resetCurrentSale)
   }
 
   function showProducts(product) {
