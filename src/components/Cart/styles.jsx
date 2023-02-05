@@ -30,4 +30,8 @@ export const StyledAside = styled.aside`
         flex-direction: column;
         gap: 21px;
     }
+
+    @media(min-width: 1023px) {
+        margin-top: 32px;
+    }
 `
