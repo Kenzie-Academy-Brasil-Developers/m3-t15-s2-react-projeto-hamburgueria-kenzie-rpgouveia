@@ -1,10 +1,10 @@
 import { Product } from "./Product"
 import { StyledUl } from "./styles"
 
-export const ProductsList = ({products, handleClick}) => {
+export const ProductsList = ({filteredProducts, handleClick}) => {
     return (
         <StyledUl>
-            {products.map(product => {
+            {filteredProducts.map(product => {
                 return (
                     <Product 
                         key={product.id} 
