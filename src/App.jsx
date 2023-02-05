@@ -4,6 +4,8 @@ import { Header } from "./components/Header"
 import { ProductsList } from "./components/ProductsList"
 import { Cart } from "./components/Cart"
 import { StyledMain } from "./styles/styles.jsx"
+import { ToastContainer, toast } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 
 function App() {
   // Local Storage
@@ -40,10 +42,15 @@ function App() {
 
   // Callbacks
   function handleClick(productId) {
-    const addProductFounded = products.find(item => {
-        return item.id == productId
-    })
-    setCurrentSale([...currentSale, addProductFounded])
+    if (!currentSale.some(product => product.id == productId)){
+      const addProductFounded = products.find(item => {
+          return item.id == productId
+      })
+      setCurrentSale([...currentSale, addProductFounded])
+      toast.success('Produto adicionado')
+    } else {
+      toast.error('Produto já foi adicionado')
+    }
   }
 
   function removeProductFromCart(productId) {
@@ -51,11 +58,13 @@ function App() {
       return item.id !== productId
     })
     setCurrentSale(newCurrentSale)
+    toast.warning('Produto removido')
   }
 
   function removeAllProductsFromCart() {
     const resetCurrentSale = []
     setCurrentSale(resetCurrentSale)
+    toast.success('Produtos removidos')
   }
 
   function showProducts(product) {
@@ -80,6 +89,18 @@ function App() {
           cartTotal={cartTotal}
         />
       </section>
+      <ToastContainer
+        position="top-right"
+        autoClose={1500}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </StyledMain>
   )
 }
