@@ -8,7 +8,7 @@ export const CartProduct = ({productInCart, removeProductFromCart}) => {
                 <img src={img}/>
             </figure>
             <section>
-                <div>
+                <div className={'product-details'}>
                     <h3>{name}</h3>
                     <p>{category}</p>
                 </div>

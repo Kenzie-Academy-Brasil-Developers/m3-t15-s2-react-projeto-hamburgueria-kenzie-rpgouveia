@@ -1,12 +1,6 @@
 import styled from "styled-components";
 
 export const StyledAside = styled.aside`
-    /* Container */
-    width: 92.3%;
-    max-width: 365px;
-    margin: 0 auto;
-
-    /* Positioning */
     margin-bottom: 20px;
 
     .cart_header {
@@ -31,7 +25,14 @@ export const StyledAside = styled.aside`
         gap: 21px;
     }
 
+    @media(min-width: 767px) {
+        width: 100%;
+        max-width: 365px;
+        align-self: center;
+    }
+
     @media(min-width: 1023px) {
         margin-top: 32px;
+        align-self: unset;
     }
 `

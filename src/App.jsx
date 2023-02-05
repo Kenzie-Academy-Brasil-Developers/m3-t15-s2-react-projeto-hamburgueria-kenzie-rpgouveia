@@ -6,6 +6,7 @@ import { Cart } from "./components/Cart"
 import { StyledMain } from "./styles/styles.jsx"
 import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
+import { StyledContainer } from "./styles/container.js"
 
 function App() {
   // Local Storage
@@ -82,16 +83,18 @@ function App() {
     <StyledMain>
       <Header setSearch={setSearch}/>
       <section>
-        <ProductsList
-          filteredProducts={filteredProducts}
-          handleClick={handleClick}
-        />
-        <Cart
-          currentSale={currentSale}
-          removeProductFromCart={removeProductFromCart}
-          removeAllProductsFromCart={removeAllProductsFromCart}
-          cartTotal={cartTotal}
-        />
+        <StyledContainer>
+          <ProductsList
+            filteredProducts={filteredProducts}
+            handleClick={handleClick}
+          />
+          <Cart
+            currentSale={currentSale}
+            removeProductFromCart={removeProductFromCart}
+            removeAllProductsFromCart={removeAllProductsFromCart}
+            cartTotal={cartTotal}
+          />
+        </StyledContainer>
       </section>
       <ToastContainer
         position="top-right"

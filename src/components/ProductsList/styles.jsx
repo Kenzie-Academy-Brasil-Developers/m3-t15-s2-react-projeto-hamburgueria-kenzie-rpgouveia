@@ -1,12 +1,6 @@
 import styled from "styled-components";
 
 export const StyledUl = styled.ul`
-    /* Container */
-    width: 92.3%;
-    max-width: 100%;
-    margin: 0 auto;
-
-    /* Positioning */
     margin-top: 29px;
     margin-bottom: 20px;
     display: flex;
@@ -15,7 +9,6 @@ export const StyledUl = styled.ul`
     overflow-y: auto;
 
     @media(min-width: 767px) {
-        width: 86.3%;
         margin-top: 32px;
         margin-bottom: 36px;
     }
@@ -24,10 +17,10 @@ export const StyledUl = styled.ul`
         overflow-y: unset;
         justify-content: unset;
         flex-wrap: wrap;
+        width: 50%;
     }
 
     @media(min-width: 1439px) {
         width: 940px;
-        
     }
 `

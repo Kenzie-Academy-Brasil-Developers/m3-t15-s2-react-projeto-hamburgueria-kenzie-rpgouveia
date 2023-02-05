@@ -26,7 +26,8 @@ export const StyledLi = styled.li`
         justify-content: space-between;
     }
 
-    section > div {
+    .product-details {
+        height: fit-content;
         display: flex;
         flex-direction: column;
         gap: 10px;
