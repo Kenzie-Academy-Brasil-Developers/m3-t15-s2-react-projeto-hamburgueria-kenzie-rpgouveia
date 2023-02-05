@@ -49,7 +49,7 @@ function App() {
       setCurrentSale([...currentSale, addProductFounded])
       toast.success('Produto adicionado')
     } else {
-      toast.error('Produto já foi adicionado')
+      toast.error('Produto já foi adicionado!')
     }
   }
 
@@ -58,7 +58,7 @@ function App() {
       return item.id !== productId
     })
     setCurrentSale(newCurrentSale)
-    toast.warning('Carrinho esvaziado')
+    toast.warning('Produto removido')
   }
 
   function removeAllProductsFromCart() {
