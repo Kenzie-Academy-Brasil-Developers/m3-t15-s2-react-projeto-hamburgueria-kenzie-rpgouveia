@@ -58,13 +58,19 @@ function App() {
       return item.id !== productId
     })
     setCurrentSale(newCurrentSale)
-    toast.warning('Produto removido')
+    toast.warning('Carrinho esvaziado')
   }
 
   function removeAllProductsFromCart() {
-    const resetCurrentSale = []
-    setCurrentSale(resetCurrentSale)
-    toast.success('Produtos removidos')
+    if (currentSale.length === 1) {
+      const resetCurrentSale = []
+      setCurrentSale(resetCurrentSale)
+      toast.success('Produto removido')
+    } else {
+      const resetCurrentSale = []
+      setCurrentSale(resetCurrentSale)
+      toast.success('Produtos removidos')
+    }
   }
 
   const filteredProducts = products.filter(item => {
@@ -76,7 +82,6 @@ function App() {
     <StyledMain>
       <Header setSearch={setSearch}/>
       <section>
-        {search && <p>Resultados de busca para: {search} </p>}
         <ProductsList
           filteredProducts={filteredProducts}
           handleClick={handleClick}

@@ -1,12 +1,10 @@
 import { StyledForm } from "./styles"
 
 export const CartTotal = ({removeAllProductsFromCart, cartTotal}) => {
-
     function submit(event) {
         event.preventDefault()
         removeAllProductsFromCart()
     }
-
     return (
         <StyledForm onSubmit={submit}>
             <div>

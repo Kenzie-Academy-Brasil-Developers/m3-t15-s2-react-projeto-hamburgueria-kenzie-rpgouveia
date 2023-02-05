@@ -1,7 +1,6 @@
 import { StyledLi } from "./styles"
 
 export const Product = ({product, handleClick}) => {
-
     return (
         <StyledLi>
             <figure>
