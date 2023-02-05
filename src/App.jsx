@@ -12,9 +12,9 @@ function App() {
   const localCurrentSale = localStorage.getItem('@HamburgueriaKenzie')
   // States
   const [products, setProducts] = useState([])
-  const [filteredProducts, setFilteredProducts] = useState([]);
   const [currentSale, setCurrentSale] = useState(localCurrentSale ? JSON.parse(localCurrentSale) : [])
   const [cartTotal, setCartTotal] = useState(0)
+  const [search, setSearch] = useState('')
 
   // Effects
   // on Mount
@@ -67,19 +67,18 @@ function App() {
     toast.success('Produtos removidos')
   }
 
-  function showProducts(product) {
-    const filteredItems = products.filter(item => {
-      return item.category == product.category
-    })
-    return setFilteredProducts([...filteredProducts, filteredItems])
-  }
+  const filteredProducts = products.filter(item => {
+    return search == '' ? true : (item.name.toLowerCase()).includes(search.toLowerCase())
+  })
+
 
   return (
     <StyledMain>
-      <Header />
+      <Header setSearch={setSearch}/>
       <section>
+        {search && <p>Resultados de busca para: {search} </p>}
         <ProductsList
-          products={products}
+          filteredProducts={filteredProducts}
           handleClick={handleClick}
         />
         <Cart
