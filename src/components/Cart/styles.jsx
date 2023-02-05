@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const StyledAside = styled.aside`
+    height: fit-content;
     margin-bottom: 20px;
 
     .cart_header {

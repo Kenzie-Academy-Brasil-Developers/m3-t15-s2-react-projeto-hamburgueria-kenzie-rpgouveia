@@ -16,7 +16,7 @@ export const Cart = ({currentSale, removeProductFromCart, removeAllProductsFromC
                     ) : (
                         currentSale.map(productInCart => {
                             return (
-                                <CartProduct 
+                                <CartProduct
                                     key={productInCart.id} 
                                     productInCart={productInCart}
                                     removeProductFromCart={removeProductFromCart}

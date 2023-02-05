@@ -3,7 +3,7 @@ import { useState, useEffect } from "react"
 import { Header } from "./components/Header"
 import { ProductsList } from "./components/ProductsList"
 import { Cart } from "./components/Cart"
-import { StyledMain } from "./styles/styles.jsx"
+import { StyledDiv } from "./styles/styles.jsx"
 import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 import { StyledContainer } from "./styles/container.js"
@@ -80,9 +80,9 @@ function App() {
 
 
   return (
-    <StyledMain>
+    <StyledDiv>
       <Header setSearch={setSearch}/>
-      <section>
+      <main>
         <StyledContainer>
           <ProductsList
             filteredProducts={filteredProducts}
@@ -95,7 +95,7 @@ function App() {
             cartTotal={cartTotal}
           />
         </StyledContainer>
-      </section>
+      </main>
       <ToastContainer
         position="top-right"
         autoClose={1500}
@@ -108,7 +108,7 @@ function App() {
         pauseOnHover
         theme="light"
       />
-    </StyledMain>
+    </StyledDiv>
   )
 }
 
