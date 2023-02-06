@@ -6,7 +6,6 @@ export const InputSearch = ({setSearch}) => {
     const submit = (event) => {
         event.preventDefault()
         setSearch(searchValue)
-        // Reset Form
         setSearchValue('')
     }
     return (

@@ -9,16 +9,13 @@ import "react-toastify/dist/ReactToastify.css"
 import { StyledContainer } from "./styles/container.js"
 
 function App() {
-  // Local Storage
   const localCurrentSale = localStorage.getItem('@HamburgueriaKenzie')
-  // States
+
   const [products, setProducts] = useState([])
   const [currentSale, setCurrentSale] = useState(localCurrentSale ? JSON.parse(localCurrentSale) : [])
   const [cartTotal, setCartTotal] = useState(0)
   const [search, setSearch] = useState('')
 
-  // Effects
-  // on Mount
   useEffect(() => {
     async function getAllProducts() {
       try {
@@ -31,7 +28,6 @@ function App() {
     getAllProducts()
   }, [])
 
-  // on Update
   useEffect(() => {
     localStorage.setItem('@HamburgueriaKenzie', JSON.stringify(currentSale))
 
@@ -41,7 +37,6 @@ function App() {
     setCartTotal(totalValue)
   }, [currentSale])
 
-  // Callbacks
   function handleClick(productId) {
     if (!currentSale.some(product => product.id == productId)){
       const addProductFounded = products.find(item => {
