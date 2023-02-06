@@ -19,7 +19,7 @@ export const StyledAside = styled.aside`
     }
 
     ul {
-        padding: 20px 18px;
+        padding: ${(props) => props.isPadding == 0 ? '0px' : '20px 18px'};
 
         display: flex;
         flex-direction: column;

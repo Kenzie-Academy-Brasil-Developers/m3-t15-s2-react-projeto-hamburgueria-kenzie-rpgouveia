@@ -5,7 +5,7 @@ import { CartTotal } from "./CartTotal"
 
 export const Cart = ({currentSale, removeProductFromCart, removeAllProductsFromCart, cartTotal}) => {
     return (
-        <StyledAside>
+        <StyledAside isPadding={currentSale.length}>
             <div className={'cart_header'}>
                 <h2>Carrinho de Compras</h2>
             </div>

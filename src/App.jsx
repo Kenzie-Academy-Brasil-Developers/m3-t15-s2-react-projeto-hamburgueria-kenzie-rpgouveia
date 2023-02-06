@@ -10,7 +10,7 @@ import { StyledContainer } from "./styles/container.js"
 
 function App() {
   const localCurrentSale = localStorage.getItem('@HamburgueriaKenzie')
-  
+
   const [products, setProducts] = useState([])
   const [currentSale, setCurrentSale] = useState(localCurrentSale ? JSON.parse(localCurrentSale) : [])
   const [cartTotal, setCartTotal] = useState(0)
