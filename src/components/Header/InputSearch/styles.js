@@ -55,4 +55,9 @@ export const StyledForm = styled.form`
 
         cursor: pointer;
     }
+
+    button:hover {
+        background-color: var(--color-primary-50);
+        border: 2px solid var(--color-primary-50);
+    }
 `
